@@ -14,6 +14,8 @@ Use this skill to check and fix code quality in Python packages. Cleanz runs lin
 - To find violations, style issues, or potential bugs across a codebase
 - To verify no new violations were introduced after changes
 
+> **Standards reference:** For Python coding conventions beyond what cleanz checks (naming, structure, docstrings), consult `.admin/standards/PYTHON.md` and `.admin/standards/FILE_STRUCTURE.md`.
+
 ## Prerequisites
 
 - The project follows standard Python structure: `pkg_name/src/pkg_name/`

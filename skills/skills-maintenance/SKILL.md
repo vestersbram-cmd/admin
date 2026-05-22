@@ -158,7 +158,6 @@ Maintain consistent organization:
 
 ```
 skills/
-├── skill-content-format/          # Meta-skill about skill format
 ├── software-development/          # Domain category
 │   ├── add-tool/
 │   ├── subagent-driven-development/
@@ -178,14 +177,73 @@ skills/
 
 When reviewing a skill, verify:
 
-- [ ] Has proper YAML frontmatter with name, description, version
-- [ ] Description clearly states when to use the skill
+- [ ] Has proper YAML frontmatter with only `name` and `description`
+- [ ] Description clearly states when to use the skill (under 200 characters, no period at end)
 - [ ] Content is actionable (not just informational)
 - [ ] No duplication with other skills
 - [ ] Code examples use project conventions
 - [ ] References are up-to-date and valid
-- [ ] Tags are accurate and specific
-- [ ] `related_skills` lists actually related skills
+- [ ] Directory name matches frontmatter `name` (kebab-case)
+- [ ] Title is Title Case (`# My Skill`)
+
+## Skill Format Specification
+
+### File Structure
+
+Each skill lives in its own subdirectory under `skills/`:
+
+```
+skills/
+  my-skill/
+    SKILL.md
+```
+
+The directory name becomes the skill identifier. Use kebab-case.
+
+### YAML Frontmatter (Required)
+
+Every `SKILL.md` must start with:
+
+```yaml
+---
+name: my-skill
+description: What this skill does and when to use it
+---
+```
+
+**Requirements:**
+- Must start with `---` on its own line
+- Must end with `---` on its own line
+- Only two fields: `name` (matches directory) and `description`
+- Keep the description under 200 characters
+- Use sentence case, no period at the end
+- Quote the description if it contains colons or special characters
+
+### Content Body
+
+After the frontmatter, write markdown content. Include these sections when they add value:
+
+- **When to Use** — clear trigger conditions
+- **Process / Workflow** — numbered steps the agent should follow
+- **Output Format** — structured reporting template
+- **Guidelines** — rules and constraints
+- **Common Pitfalls** — mistakes to avoid
+- **Completion Criteria** — how to know when done
+
+### What Not to Include
+
+- Tool-specific API calls or code (skills are procedural guides, not scripts)
+- References to external frameworks or platforms that aren't universal
+- Frontmatter fields beyond `name` and `description`
+- Auto-generated metadata blocks
+- General programming knowledge easily found online (that's what the value test is for)
+
+### Naming Conventions
+
+- Directory: kebab-case (`my-skill`)
+- Frontmatter `name`: same as directory (`my-skill`)
+- Title: Title Case (`# My Skill`)
+- Description: sentence case, no period at the end
 
 ## Common Cleanup Patterns
 

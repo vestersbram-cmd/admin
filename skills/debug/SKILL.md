@@ -1,6 +1,6 @@
 ---
 name: debug
-description: "Use when investigating bugs, performance regressions, or unexpected behavior. Follows a disciplined loop: build a feedback loop, reproduce, hypothesize, instrument, fix with a regression test, and clean up."
+description: Use when investigating bugs, performance regressions, or unexpected behavior. Follows a disciplined loop: build a feedback loop, reproduce, hypothesize, instrument, fix with a regression test, and clean up.
 ---
 
 # Debug: Systematic Debugging Workflow
@@ -104,7 +104,7 @@ Test your hypotheses one at a time, changing exactly one variable per test.
 3. **Be verified against the original reproduction** — the real-world scenario, not just the minimal test. Some bugs only manifest with specific data shapes or timing.
 
 ### If 3+ fixes fail:
-Stop and reconsider the architecture. You may be fighting a design problem that no single fix can address. `design-thinking` may be more appropriate than `debug` at this point.
+Stop and reconsider the architecture. You may be fighting a design problem that no single fix can address. `plan` may be more appropriate than `debug` at this point.
 
 ---
 

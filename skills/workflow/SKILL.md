@@ -1,6 +1,6 @@
 ---
 name: workflow
-description: "Use when starting a new development task, planning implementation, or organizing a multi-step project. Covers the full lifecycle: understanding requirements, planning, executing, reviewing, and capturing lessons."
+description: Use when starting a new development task, planning implementation, or organizing a multi-step project. Covers the full lifecycle: understanding requirements, planning, executing, reviewing, and capturing lessons.
 ---
 
 # Workflow: Structured Development Lifecycle

@@ -19,10 +19,10 @@ This document explains which skills from the three source directories were **not
 **Why excluded:** No top-level `SKILL.md` file existed in this directory. The research use case is already well-covered by `browserchat-ask` (delegate to external AI providers) and `browsernotes` (query codebase docs).
 
 ### `software-development`
-**Why excluded:** No top-level `SKILL.md` file existed. This directory may have been a category folder rather than an actual skill. The software development lifecycle is comprehensively covered by `plan`, `execute`, `review`, `verify`, `workflow`, `brownfield`, and `greenfield`.
+**Why excluded:** No top-level `SKILL.md` file existed. This directory may have been a category folder rather than an actual skill. The software development lifecycle is comprehensively covered by `plan`, `execute`, `review`, `workflow`, `brownfield`, and `greenfield`.
 
 ### `domain`
-**Why excluded:** No top-level `SKILL.md` file existed. Domain-specific knowledge is better captured per-project in the `meta` skill or in a project's own documentation.
+**Why excluded:** No top-level `SKILL.md` file existed. Domain-specific knowledge is better captured per-project in a project's own documentation.
 
 ---
 
@@ -35,10 +35,9 @@ Several skills existed in multiple sources with overlapping content. Rather than
 | `plan` | `~/.agents/skills` | Added structured markdown template, decision-complete planning heuristics |
 | `execute` | `~/.agents/skills` | Added evidence-based execution workflow, completion checklist |
 | `cleaner` | `~/.agents/skills` | Added structured process, focus areas, output format (since consolidated into `cleanz`) |
-| `verify` | codebuff | Merged with structured verification process + quick-reference card |
-| `review` | codebuff | Merged with output format, severity levels, and guardrails |
+| `review` | codebuff + `verify` | Merged with verification gate, structured output format, severity levels, guardrails, and completion protocol (absorbed `verify`) |
 
-The alternate versions of these five skills were **not** copied separately because their content was fully absorbed into the merged versions above. `cleaner` was later consolidated into `cleanz` to create a single comprehensive code quality skill.
+The alternate versions of these skills were **not** copied separately because their content was fully absorbed into the merged versions above. `cleaner` was later consolidated into `cleanz` to create a single comprehensive code quality skill.
 
 ---
 
@@ -53,9 +52,6 @@ Five skills were removed because they were tightly coupled to a specific platfor
 - `orchestrate` — Managed Windsurf sessions, VSAPI, and Discord notifications
 - `testing-standards` — Every command referenced platform-specific scripts (`test_planner.py`, `pytest_scaffold.py`)
 
-### Codebuff-specific skills
-`meta` is tightly coupled to the Codebuff monorepo architecture. It was included because it serves as a good example of a project-wide knowledge skill, but it is only directly applicable when working on the Codebuff codebase.
-
 ---
 
 ## Summary
@@ -64,7 +60,7 @@ Five skills were removed because they were tightly coupled to a specific platfor
 |----------------------|-------|-------|
 | No `SKILL.md` file present | 3 | `research`, `software-development`, `domain` |
 | Fragmented sub-skills (no single skill file) | 1 | `github` |
-| Merged into another skill | 5 | alternate versions of `plan`, `execute`, `cleaner`, `verify`, `review` |
+| Merged into another skill | 4 | alternate versions of `plan`, `execute`, `cleaner`, `review` |
 | Too platform-specific to generalize | 5 | `change-report`, `forget-everything`, `gmail-creditor`, `orchestrate`, `testing-standards` |
 | **Total excluded** | **9** | — |
 

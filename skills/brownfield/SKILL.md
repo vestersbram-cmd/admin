@@ -24,11 +24,15 @@ Phase 1: Explore  →  Phase 2: Understand  →  Phase 3: Plan & Delegate  →  
 
 1. **Verify the project exists** — check that the project directory is accessible
 2. **Read root configs** — `package.json`, `pyproject.toml`, `Cargo.toml`, `Makefile`, `tsconfig.json`, etc.
-3. **Explore the directory tree** — list files to understand the structure:
+3. **Check project standards** — read the relevant standard in `.admin/standards/` for the project's technology:
+   - Python project → `.admin/standards/PYTHON.md`, `.admin/standards/FILE_STRUCTURE.md`
+   - FastAPI project → `.admin/standards/FASTAPI.md`
+   - Any Python project → `.admin/standards/TESTING.md` for expected test conventions
+4. **Explore the directory tree** — list files to understand the structure:
    ```bash
    find <projectDir> -maxdepth 4 -type f | head -80
    ```
-4. **Read relevant source files** — understand existing patterns, naming conventions, and architecture before making changes
+5. **Read relevant source files** — understand existing patterns, naming conventions, and architecture before making changes. Compare against the relevant standard to identify deviations.
 
 ## Phase 2 — Understand with browsernotes
 

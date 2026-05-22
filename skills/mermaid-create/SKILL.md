@@ -1,5 +1,5 @@
 ---
-name: mermaid-master-architect
+name: mermaid-create
 description: Generate, refine, and visually optimize error-free Mermaid diagrams for system architecture, process flows, data models, and state transitions using default colors only.
 ---
 # Mermaid Master Architect

@@ -35,6 +35,11 @@ Phase 1: Scaffold  →  Phase 2: Understand  →  Phase 3: Delegate & Build  →
 5. **Explore what was generated** — read the key files:
    - Python: `pyproject.toml`, `src/<name>/__init__.py`, tests
    - TypeScript: `package.json`, `src/index.ts`, `tsconfig.json`
+6. **Consult project standards** — check `.admin/standards/` for relevant conventions:
+   - Python project: read `.admin/standards/PYTHON.md`, `.admin/standards/FILE_STRUCTURE.md`, and `.admin/standards/pyproject.toml` for structure reference
+   - FastAPI project: also read `.admin/standards/FASTAPI.md`
+   - Testing: read `.admin/standards/TESTING.md` for expected test patterns
+   - README: read `.admin/standards/README_STYLE.md` for README structure
 
 ## Phase 2 — Understand with browsernotes
 

@@ -21,8 +21,36 @@ Review uncommitted changes (staged and unstaged) and find ways to simplify the c
 4. **Error Handling** — Remove unnecessary try/catch. Use explicit error returns where the codebase prefers them.
 5. **Organization** — Move inline logic to named functions. Group related operations.
 6. **Dead Code** — Remove unused imports, variables, functions, and commented-out code.
+7. **Type Ignores (Python)** — Remove unnecessary `# type: ignore` comments. These suppress type checking and should be removed when the underlying issue is resolved.
 
 ## Process
+
+1. Run `git diff` to see all uncommitted changes.
+2. Read each changed file and understand what it does.
+3. For each complex section, ask: "Can this be simpler?"
+4. Apply simplifications one at a time.
+5. Verify the code still works after each change.
+6. Summarize what was cleaned up.
+
+### Type Ignores Workflow (Python)
+
+When cleaning up Python code, find and fix unnecessary `# type: ignore` comments:
+
+```bash
+# Find all type: ignore comments
+grep -r "# type: ignore" src/ --include="*.py"
+```
+
+For each one found:
+1. **Attempt removal** — remove the comment and run `mypy` to see if the issue still exists
+2. **Fix underlying issues** — if mypy errors remain, fix the actual type problem
+3. **Document necessary ignores** — for truly unavoidable ignores, add a comment explaining why
+4. **Prefer specific codes** — use `# type: ignore[arg-type]` instead of blanket `# type: ignore`
+
+```bash
+# Verify after changes
+mypy src/
+```
 
 1. Run `git diff` to see all uncommitted changes.
 2. Read each changed file and understand what it does.
