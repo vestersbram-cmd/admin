@@ -1,0 +1,12 @@
+{
+  "chrome-devtools": {
+    "args": [
+  	  "chrome-devtools-mcp@latest",
+  	  "--headless=false",
+  	  "--isolated=true",
+  	  "--browser-url=http://127.0.0.1:9111"
+    ],
+    "command": "npx",
+    "disabled": true
+  }
+}
