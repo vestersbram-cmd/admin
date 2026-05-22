@@ -4,7 +4,7 @@ This document explains which skills from the three source directories were **not
 
 ## Sources Consulted
 
-1. **Codebuff** — `/home/tom260513/codebuff/.agents/skills/` (13 skills copied)
+1. **Codebuff** — `/home/tom260513/codebuff/.agents/skills/` (10 skills copied)
 2. **`~/.agents/skills`** — User's local agent skills (13 skills copied)
 3. **Third-party** — `~/dev/packages/_CLAW/third-party/skills/` (4 skills copied)
 
@@ -32,7 +32,7 @@ Several skills existed in multiple sources with overlapping content. Rather than
 
 | Skill | Primary Source | Enhancements from Other Sources |
 |-------|---------------|--------------------------------|
-| `plan` | `~/.agents/skills` | Added structured markdown template, decision-complete planning heuristics |
+| `plan` | `~/.agents/skills` + `design-thinking` | Added structured markdown template, decision-complete planning heuristics, design thinking phases (territory, framing, interface, tradeoffs, critique) |
 | `execute` | `~/.agents/skills` | Added evidence-based execution workflow, completion checklist |
 | `cleaner` | `~/.agents/skills` | Added structured process, focus areas, output format (since consolidated into `cleanz`) |
 | `review` | codebuff + `verify` | Merged with verification gate, structured output format, severity levels, guardrails, and completion protocol (absorbed `verify`) |
@@ -60,11 +60,12 @@ Five skills were removed because they were tightly coupled to a specific platfor
 |----------------------|-------|-------|
 | No `SKILL.md` file present | 3 | `research`, `software-development`, `domain` |
 | Fragmented sub-skills (no single skill file) | 1 | `github` |
-| Merged into another skill | 4 | alternate versions of `plan`, `execute`, `cleaner`, `review` |
 | Too platform-specific to generalize | 5 | `change-report`, `forget-everything`, `gmail-creditor`, `orchestrate`, `testing-standards` |
 | **Total excluded** | **9** | — |
 
-**Result:** 28 high-quality, non-overlapping, platform-agnostic skills covering the full development lifecycle.
+> **Note:** 4 additional skills (`plan`, `execute`, `cleaner`, `review`) existed in multiple sources and were **merged** rather than duplicated. Their content is represented in the merged versions — they are counted among the 22 skills, not excluded.
+
+**Result:** 22 high-quality, non-overlapping, platform-agnostic skills covering the full development lifecycle.
 
 ## Post-Creation Consolidations
 
@@ -74,6 +75,11 @@ After the initial curation, two additional consolidations were performed:
 |-------|--------|--------|
 | `cleaner` | Consolidated into `cleanz` | `cleaner` was a thin process wrapper around the `cleanz` tool — merged to create a single comprehensive skill |
 | `browsernotes-codebase` | Consolidated into `browsernotes` | Both were about the same NotebookLM codebase integration (sync + query) — merged into one skill with Setup and Query sections |
+| `design-thinking` | Absorbed into `plan` | Design thinking phases (territory, framing, interface, tradeoffs, critique) merged as preamble to existing plan-writing content |
+| `verify` | Absorbed into `review` | Iron law, verification gate, self-verification, completion protocol, and code review protocols merged into `review` |
+| `browser` | Renamed to `browser-github`; PROCEDURE.md → SKILL.md | Restructured from multi-file procedure into single SKILL.md with clearer scope (GitHub-specific) |
+| `mermaid-master-architect` | Renamed to `mermaid-create` | Streamlined name; content preserved |
+| `meta` | Removed | Codebuff-specific internals, not portable; conventions already covered by `workflow` and `plan` |
 
 ---
 

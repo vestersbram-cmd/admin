@@ -37,11 +37,11 @@ Four skills were synthesized from multiple sources to produce the best of all wo
 
 | Skill | Sources Merged | Key Improvements |
 |-------|---------------|------------------|
-| `plan` | `~/.agents/skills` + another source | Structured markdown template, decision-complete planning heuristics |
+| `plan` | `~/.agents/skills` + `design-thinking` | Structured markdown template, decision-complete planning heuristics, design thinking phases |
 | `execute` | `~/.agents/skills` + another source | Evidence-based execution workflow, completion checklist |
-| `review` | codebuff + multiple sources | Merged verification gate, structured review output, severity levels, and guardrails — absorbed `verify` content |
+| `review` | codebuff + `verify` | Merged verification gate, structured review output, severity levels, guardrails, and completion protocol |
 
-> **Note:** `cleaner` was later consolidated into `cleanz` to create a single comprehensive code quality skill. `browsernotes-codebase` was consolidated into `browsernotes`.
+> **Note:** `cleaner` was later consolidated into `cleanz`. `browsernotes-codebase` was consolidated into `browsernotes`. `design-thinking` was absorbed into `plan`. `verify` was absorbed into `review`.
 
 ## Skill Categories
 

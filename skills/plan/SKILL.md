@@ -15,11 +15,8 @@ Never start implementation until you understand the design space. Explicitly sta
 ### 2. Simplicity First
 Implement the minimal solution. Speculative features, unnecessary abstractions, and premature generalization are the root cause of most architectural debt. Every line of code you don't write is a line that can never have a bug.
 
-### 3. Surgical Changes
-Modify existing code as little as possible. Maintain existing style and conventions. Don't refactor unrelated code "while you're in there" — each change should do exactly one thing. Clean up only what your change directly impacts.
-
-### 4. Depth Over Breadth
-A module is "deep" when it has a simple interface and complex implementation — it does a lot with minimal surface area. A module is "shallow" when its interface is as complex as its implementation — it adds friction without leverage. Design deep modules.
+### 3. Scope Each Change Precisely
+A plan should define exactly what changes and what stays untouched. Each step should modify exactly one logical unit. Resist plans that bundle refactoring, cleanup, and feature work into one step — each change does exactly one thing. What you leave alone is as important as what you touch.
 
 ---
 
@@ -30,6 +27,14 @@ A module is "deep" when it has a simple interface and complex implementation —
 - Refactoring work with dependencies or risk
 - Any request where the next step is better planning than immediate implementation
 - Facing an ambiguous design decision that needs structured evaluation
+
+### When NOT to Plan
+
+Skip formal planning when:
+- The code is a prototype or will be thrown away
+- The requirements are fundamentally unclear (planning can't fix unknown unknowns)
+- There is no evidence the current design is causing problems
+- The change is cosmetic and affects nothing measurable
 
 ---
 
@@ -121,6 +126,7 @@ When designing a module, the interface (public API) matters more than the implem
 - **Consistent abstractions**: Does it use the same patterns as the rest of the codebase?
 - **Domain language**: Does it use the project's vocabulary?
 - **Hard to misuse**: Can the user get it wrong? If so, redesign.
+- **Deep interface**: Simple API surface with real work happening behind it (not a shallow pass-through)
 - **Testable through the interface**: Can you verify behavior without mocking internals?
 
 ### Seams and adapters
@@ -145,12 +151,6 @@ A "seam" is a place where you can alter behavior without changing the code that 
 | Coupling vs Duplication | Bias toward tolerated duplication | When the coupling pattern is well-understood (DRY only when stable) |
 | Build vs Buy | Bias toward build (for core domain) | For commodity infrastructure |
 | Optimize now vs Later | Bias toward later | When you can measure a real bottleneck |
-
-### When to skip design work:
-- The code is a prototype or will be thrown away
-- The requirements are fundamentally unclear
-- There is no evidence the current design is causing problems
-- The change is cosmetic and affects nothing measurable
 
 ---
 

@@ -176,8 +176,8 @@ When writing a structured review, use this template:
 Before declaring work done:
 
 1. **All tests pass** — run the full test suite, not just your new tests
-2. **Typecheck passes** — `bun run typecheck` or equivalent
-3. **Build succeeds** — `bun run build` or equivalent
+2. **Typecheck passes** — run the type checker
+3. **Build succeeds** — run the build command
 4. **No debug artifacts** — grep for console.log, debugger statements, TODO markers you added
 5. **No unintended changes** — review every changed file to confirm only intentional modifications
 
@@ -227,10 +227,11 @@ When you are on the receiving end of a code review (as the agent being reviewed)
 6. **Implement** — one item at a time, verifying each
 
 ### Forbidden responses:
-- ❌ Performative agreement: "Great point!", "You're absolutely right!"
-- ❌ Gratitude expressions: "Thanks!", "Thank you!"
-- ❌ Defensive reactions: "Actually, I think..."
-- ❌ Over-apology: "Sorry about that, my bad entirely"
+- ❌ Performative agreement: "Great point!", "You're absolutely right!" — state what you changed, don't perform enthusiasm
+- ❌ Defensive reactions: "Actually, I think..." before understanding the feedback
+- ❌ Over-apology: "Sorry about that, my bad entirely" — fix the issue, don't dwell on blame
+
+> **Allowed:** Brief acknowledgment paired with action (e.g., "Good catch — fixed the null check"). The goal is concise technical communication, not social performance.
 
 ### When feedback is unclear:
 Stop and ask for clarification before implementing anything. Partial understanding leads to incorrect implementations. A clarifying question is faster than a wrong fix.
@@ -248,31 +249,9 @@ When the codebase changes outside your control (e.g., rebase, merge, dependency 
 
 ---
 
-## Appendix: Quick Reference
+## Quick Reference
 
-### Common Verification Commands
-
-Adapt these to the project's toolchain:
-
-| Type | Example command |
-|---|---|
-| Type checking | `bun run typecheck` or `python -m mypy src/` |
-| Linting | `bun run lint` or `ruff check src/` |
-| Tests | `bun test` or `python -m pytest` |
-| Format check | `bun run format:check` or `ruff format --check src/` |
-| Build | `bun run build` |
-
-### Quick Result Log Format
-
-Use this structure to record verification results concisely:
-
-- **Name**: typecheck — **Result**: PASS — **Command**: `bun run typecheck`
-- **Name**: tests — **Result**: PASS — **Command**: `bun test`
-- **Name**: build — **Result**: PASS — **Command**: `bun run build`
-
----
-
-## Quick Reference Card
+### Workflow Card
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -296,3 +275,23 @@ Use this structure to record verification results concisely:
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+### Common Verification Commands
+
+Adapt these to the project's toolchain:
+
+| Type | Example command |
+|---|---|
+| Type checking | `bun run typecheck` or `python -m mypy src/` |
+| Linting | `bun run lint` or `ruff check src/` |
+| Tests | `bun test` or `python -m pytest` |
+| Format check | `bun run format:check` or `ruff format --check src/` |
+| Build | `bun run build` |
+
+### Quick Result Log Format
+
+Use this structure to record verification results concisely:
+
+- **Name**: typecheck — **Result**: PASS — **Command**: `bun run typecheck`
+- **Name**: tests — **Result**: PASS — **Command**: `bun test`
+- **Name**: build — **Result**: PASS — **Command**: `bun run build`

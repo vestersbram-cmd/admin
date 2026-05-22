@@ -25,6 +25,7 @@ Before writing any code, gather broad context:
    - What are the major modules? (read_subtree on key directories)
    - What patterns exist? (read existing implementations, especially recent ones)
    - What conventions matter? (lint rules, testing patterns, naming, imports)
+   - Are there relevant standards in `.admin/standards/`? (e.g., `.admin/standards/PYTHON.md` for Python, `.admin/standards/TESTING.md` for testing methodology)
 
 2. **Define the domain vocabulary**
    - Check for `CONTEXT.md`, `AGENTS.md`, `CLAUDE.md` — these contain project-specific terminology

@@ -62,6 +62,7 @@ How the change was checked and what the results were.
 
 - Review the full plan if one exists.
 - Locate 2–3 similar implementations or tests.
+- Check `.admin/standards/` for relevant coding conventions (e.g., `.admin/standards/PYTHON.md` for Python, `.admin/standards/FASTAPI.md` for FastAPI).
 - Note dependencies, required outputs, and evidence criteria.
 - Identify any files that should be updated together.
 
